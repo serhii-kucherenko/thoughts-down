@@ -1,5 +1,7 @@
 export default {
   mode: 'spa',
+
+  router: { base: '/thoughts-down/' },
   /*
    ** Headers of the page
    */
