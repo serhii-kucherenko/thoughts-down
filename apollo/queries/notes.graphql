@@ -1,0 +1,7 @@
+query Notes {
+  notes {
+    title
+    body
+    created_at
+  }
+}

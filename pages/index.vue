@@ -1,28 +1,42 @@
 <template>
   <div>
     <el-row>
-      <h2>{{ message }}</h2>
-      <h4>{{ fullName }}</h4>
+      <el-col
+        v-for="(note, index) in notes"
+        :key="note.id"
+        :span="8"
+        :offset="index > 0 ? 2 : 0"
+      >
+        <el-card :body-style="{ padding: '0px' }">
+          <div style="padding: 14px;">
+            <h2>{{ note.title }}</h2>
+            <p>{{ note.body }}</p>
+            <div class="bottom clearfix">
+              <time class="time">{{ note.created_at }}</time>
+            </div>
+          </div>
+        </el-card>
+      </el-col>
     </el-row>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import 'vue-apollo';
+import { Vue, Component } from 'vue-property-decorator';
+import { Notes } from '../types/types';
+import NotesQueryGQL from '~/apollo/queries/notes.graphql';
 
-interface User {
-  firstName: string
-  lastName: string
-}
-
-@Component
-export default class YourComponent extends Vue {
-  user: User = { firstName: 'Sergey', lastName: 'Kucherenko' }
-  message: string = 'TS works'
-
-  get fullName(): string {
-    return `${this.user.firstName} ${this.user.lastName}`
+@Component({
+  apollo: {
+    notes: {
+      query: NotesQueryGQL,
+      variables: {}
+    }
   }
+})
+export default class HomePage extends Vue {
+  notes: Notes = [];
 }
 </script>
 

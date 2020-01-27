@@ -1,7 +1,7 @@
 module.exports = {
     root: true,
     env: {
-        node: true
+        node: true,
     },
     extends: [
         '@nuxtjs',
@@ -9,6 +9,6 @@ module.exports = {
         'prettier',
         'prettier/vue',
         'plugin:prettier/recommended',
-        'plugin:nuxt/recommended'
-    ]
-}
+        'plugin:nuxt/recommended',
+    ],
+};

@@ -16,6 +16,6 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@nuxt/types"]
+    "types": ["@nuxt/types", "vue-apollo/types"]
   }
 }
