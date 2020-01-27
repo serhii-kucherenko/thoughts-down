@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>TS is working with Strapi throught GraphQL</h2>
     <el-row>
       <el-col
         v-for="(note, index) in notes"

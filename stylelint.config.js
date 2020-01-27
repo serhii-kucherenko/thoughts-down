@@ -13,4 +13,4 @@ module.exports = {
     'declaration-colon-space-after': 'always',
     'max-empty-lines': 2
   }
-}
+};
